@@ -36,11 +36,12 @@ public class TestPracticeForm {
         $(".react-datepicker__day.react-datepicker__day--003").click();
         $("#subjectsInput").setValue("arts").pressEnter();
         $(byText("Music")).click();
-        File file = $("#uploadPicture").uploadFile(new File("src/test/java/resources/Joka.jpg")); //изи нашлось в интернете.
+        File file = $("#uploadPicture").uploadFromClasspath("joka.jpg");
         $("#currentAddress").setValue("Russia, Krasnodar, Krasnaya 5.");
         $("#react-select-3-input").setValue("ncr").pressEnter();
         $("#react-select-4-input").setValue("gurgaon").pressEnter();
         $("#submit").click();
+        ;
 
         //проверяем ввод
         $(".table-responsive").shouldHave(text("Boka Joka"),
@@ -53,8 +54,6 @@ public class TestPracticeForm {
                 text("Joka.jpg"),
                 text("Russia, Krasnodar, Krasnaya 5."),
                 text("NCR Gurgaon"));
-
-        //sleep(10000);
     }
 
 }
