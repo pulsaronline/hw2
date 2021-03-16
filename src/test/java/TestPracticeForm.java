@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestPracticeForm {
 
-
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
