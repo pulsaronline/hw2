@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -34,22 +35,26 @@ public class TestPracticeForm {
         $(".react-datepicker__year-select").selectOptionByValue("1980");
         $(".react-datepicker__day.react-datepicker__day--003").click();
         $("#subjectsInput").setValue("arts").pressEnter();
-
         $("#hobbiesWrapper").find(byText("Music")).click(); //подсказали, сам не догадался. Работа с радиокнопками и чекбоксами на сайте кривая или селенид дурит?
-
-        File file = $("#uploadPicture").uploadFile(new File("src/test/java/resources/Joka.jpg"));
-
-
+        File file = $("#uploadPicture").uploadFile(new File("src/test/java/resources/Joka.jpg")); //изи нашлось в интернете.
         $("#currentAddress").setValue("Russia, Krasnodar, Krasnaya 5.");
         $("#react-select-3-input").setValue("ncr").pressEnter();
         $("#react-select-4-input").setValue("gurgaon").pressEnter();
+        $("#submit").click();
 
+        //проверяем ввод
+        $(".table-responsive").shouldHave(text("Boka Joka"),
+                text("legenda@mir.com"),
+                text("Other"),
+                text("8005553535"),
+                text("03 September,1980"),
+                text("Arts"),
+                text("Music"),
+                text("Joka.jpg"),
+                text("Russia, Krasnodar, Krasnaya 5."),
+                text("NCR Gurgaon"));
 
-        sleep(10000);
-
-
-        //проверяем формы
-
+        //sleep(10000);
     }
 
 }
