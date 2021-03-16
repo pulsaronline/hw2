@@ -40,7 +40,6 @@ public class TestPracticeForm {
         $("#react-select-3-input").setValue("ncr").pressEnter();
         $("#react-select-4-input").setValue("gurgaon").pressEnter();
         $("#submit").click();
-        ;
 
         //проверяем ввод
         $(".table-responsive").shouldHave(text("Boka Joka"),
