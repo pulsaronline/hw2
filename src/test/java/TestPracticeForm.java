@@ -25,17 +25,17 @@ public class TestPracticeForm {
         open("https://demoqa.com/automation-practice-form");
 
         //заполняем формы
-        $("#firstName").setValue("Boka").pressEnter();
-        $("#lastName").setValue("Joka").pressEnter();
-        $("#userEmail").setValue("legenda@mir.com").pressEnter();
-        $("#gender-radio-3").doubleClick();       //с одинарным кликом не работало, почему то.
+        $("#firstName").setValue("Boka");
+        $("#lastName").setValue("Joka");
+        $("#userEmail").setValue("legenda@mir.com");
+        $(byText("Other")).click();
         $("#userNumber").setValue("8005553535");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("8");
         $(".react-datepicker__year-select").selectOptionByValue("1980");
         $(".react-datepicker__day.react-datepicker__day--003").click();
         $("#subjectsInput").setValue("arts").pressEnter();
-        $("#hobbiesWrapper").find(byText("Music")).click(); //подсказали, сам не догадался. Работа с радиокнопками и чекбоксами на сайте кривая или селенид дурит?
+        $(byText("Music")).click();
         File file = $("#uploadPicture").uploadFile(new File("src/test/java/resources/Joka.jpg")); //изи нашлось в интернете.
         $("#currentAddress").setValue("Russia, Krasnodar, Krasnaya 5.");
         $("#react-select-3-input").setValue("ncr").pressEnter();
