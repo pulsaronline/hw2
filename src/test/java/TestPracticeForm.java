@@ -53,5 +53,4 @@ public class TestPracticeForm {
                 text("Russia, Krasnodar, Krasnaya 5."),
                 text("NCR Gurgaon"));
     }
-
 }
