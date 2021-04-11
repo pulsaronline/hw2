@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestPracticeForm {
-
+        //устанавливаем браузер в фуллскрин
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
@@ -28,7 +28,7 @@ public class TestPracticeForm {
         $("#lastName").setValue("Joka");
         $("#userEmail").setValue("legenda@mir.com");
         $(byText("Other")).click();
-        $("#userNumber").setValue("8005553535");
+        $("#userNumber").setValue("8005553538");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOptionByValue("8");
         $(".react-datepicker__year-select").selectOptionByValue("1980");
