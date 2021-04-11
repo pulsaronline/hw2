@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class TestPracticeForm {
-
+        //устанавливаем браузер в фуллскрин
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
